@@ -1,0 +1,10 @@
+<launch>
+
+  <!-- OpenNi skeleton tracker -->
+  <node pkg="openni_tracker" type="openni_tracker" name="openni_tracker" respawn="true" output="screen"/>
+
+  <!-- Attach openni_depth_frame tf to camera_depth_frame tf -->
+  <node pkg="tf" type="static_transform_publisher" name="openni_tracker_static_transform_publisher"
+    args="0 0 0 0 0 0 camera_depth_frame openni_depth_frame 100" respawn="true"/>
+
+</launch>
